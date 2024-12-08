@@ -4,7 +4,7 @@
             <div class="products-wrapper">
                 <div 
                 class="products-card"
-                v-for="goods in goodsArray" 
+                v-for="goods in store.goods" 
                 :key="goods.id"
                 >
                     <div class="products-card__image">
@@ -21,7 +21,7 @@
                             <div class="products-card__description-controls">
                                 <button class="btn btn-primary">
                                     {{ goods.btn }}
-                                    <img src="./icons/cart-white.svg" alt="user">
+                                    <img src="./../assets/icons/cart-white.svg" alt="user">
                                 </button>
                                 <span class="products-card__description-controls--price">{{ goods.price }} ₽</span>
                             </div>
@@ -34,6 +34,6 @@
 </template>
 
 <script setup>
-import {goodsArray} from './../constans/goods';
+import { store } from './../store/index';
 const getUrl = (name) => new URL(`../assets/images/goods/${name}`, import.meta.url)
 </script>
